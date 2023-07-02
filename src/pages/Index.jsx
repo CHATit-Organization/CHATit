@@ -1,5 +1,5 @@
 import React from "react";
-import Famcord from "../assets/svg/index/logo.svg";
+import ChatIt from "../assets/svg/index/Chatit.svg";
 import Stepper from "../assets/svg/landing/stepper.svg";
 import SocialFiLogo from "../assets/images/Saly1.png";
 import { motion } from "framer-motion";
@@ -40,7 +40,7 @@ export default function Index() {
   return (
     <div className="bg-[#44444C] relative left-[-25px] h-[95vh] w-[100vw] overflow-hidden rounded-lg index">
       <div className="index-header  @apply bg-[#1D203E] h-[10vh] rounded-t-lg py-2 px-[50px] flex justify-between items-center">
-        <img src={Famcord} alt="logo" />
+        <img src={ChatIt} alt="logo" className="w-[100px]" />
 
         <div>
           <ul className="index-header-nav  flex justify-between gap-[80px] items-center text-white font-semibold text-lg">

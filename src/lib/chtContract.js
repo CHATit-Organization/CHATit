@@ -7,21 +7,7 @@ const chtInit = (web3) => {
   return new web3.eth.Contract(CHT.abi, CHT.networks[networkKey].address);
 };
 
-// const getXdcBalance = async (state, web3, account) => {
-//   await web3.eth
-//     .getBalance(account)
-//     .then(async (balance) => {
-//       const blnc = new Big(balance || 0);
-//       const formattedBlnc = blnc.div("10e17").toFixed(4);
-//       if (formattedBlnc !== state.xdcBalance) {
-//         await state.setXdcBalance(formattedBlnc);
-//       }
-//       return formattedBlnc;
-//     })
-//     .catch((err) => {
-//       console.log("err: ", err);
-//     });
-// };
+
 
 const chxBalance = async (state) => {
   await state.chtContract.methods

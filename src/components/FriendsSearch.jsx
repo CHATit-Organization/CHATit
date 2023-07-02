@@ -16,7 +16,6 @@ function FriendsSearch() {
       <form action="" className="search-container  flex items-center justify-center">
         <input
           type="text"
-          className="search-bar w-[200px] h-[30px] bg-[#44444C] rounded-[8px] pl-[19px] mb-[20px]"
           placeholder="Search friends"
         />
       </form>

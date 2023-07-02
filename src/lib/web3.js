@@ -53,9 +53,9 @@ const connectWallet = async (state) => {
     await web3Init().then(async (web3) => {
       await state.setWeb3(web3);
       const chx = await chtInit(web3);
-      const chatXdc = await chatitInit(web3);
+      const chatIt = await chatitInit(web3);
       await state.setchtContract(chx);
-      await state.setchatitContract(chatXdc);
+      await state.setchatitContract(chatIt);
       const accounts = await window.ethereum.request({
         method: "eth_accounts",
       });

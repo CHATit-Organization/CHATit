@@ -2,7 +2,7 @@ import React from "react";
 import Back from "../assets/svg/toggle/btn1.svg";
 import Hide from "../assets/svg/toggle/btn2.svg";
 import Minimize from "../assets/svg/toggle/btn3.svg";
-import Logo from "../assets/svg/index/logo.svg";
+import Logo from "../assets/svg/index/Chatit.svg";
 import Rectangle from "../assets/svg/toggle/Rectangle.svg";
 import Avatar1 from "../assets/svg/toggle/action1.svg";
 import Avatar2 from "../assets/svg/toggle/action2.svg";
@@ -14,7 +14,7 @@ function Toggle() {
   const chat = useChat();
   return (
     <div className=" flex flex-col w-[76px] items-center  h-[85vh] py-[13px]  ">
-      <div className="app_logo w-[50px] flex justify-center mb-[20px]">
+      <div className="app_logo w-[70px] flex justify-center mb-[20px]">
         <img src={Logo} alt="logo" />
       </div>
       <button

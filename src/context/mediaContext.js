@@ -4,6 +4,7 @@ const MediaContext = createContext();
 
 export const MediaProvider = ({ children }) => {
     const [isMedia, setIsMedia] = useState(false)
+    const [isDone, setIsDone] = useState(false)
     const [friendsMedia, setFriendsMedia] = useState('')
     const [shareContact, setSharedContact] = useState({ friends: [] });
     const [shareAudio, setShareAudio] = useState(false);
@@ -14,7 +15,15 @@ export const MediaProvider = ({ children }) => {
 
     const handleMedia = () => {
         setIsMedia(prevState => !prevState)
+        if (shareFriendsContact) {
+          setIsMedia(false)
+        }
+
     }
+    const handleDone = () => {
+        setIsMedia(prevState => !prevState)
+    }
+
     const handleSetFriends = (id) => {
         setFriendsMedia(id)
     }
@@ -80,6 +89,7 @@ export const MediaProvider = ({ children }) => {
          shareFriendsContact,
          friendsMedia,
          shareContact,
+         setShareFriendsContact
 
 
    
