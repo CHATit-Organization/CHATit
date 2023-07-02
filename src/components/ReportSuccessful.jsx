@@ -8,7 +8,7 @@ function ReportSuccessful() {
       <img src={success} alt="" />
       <p className="success-msg font-extralight  italic text-center">
         Hurray! You hit the jackpot, you got this user banned. your reward is
-        0.9997 CHX token, you should get it any moment from now
+        0.9997 CHT token, you should get it any moment from now
       </p>
       <Button>Done</Button>
     </div>
