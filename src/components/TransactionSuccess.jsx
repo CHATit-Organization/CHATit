@@ -2,10 +2,13 @@ import React from "react";
 import Button from "./Button";
 import success from "../assets/svg/chat/success.svg";
 import { useToken } from "../context/tokenContext";
+import { store } from "../store/zustand";
 
 function TransactionSuccess() {
   const token = useToken();
   const { setSuccess } = token;
+  const storeState = store((state) => state);
+
   return (
     <div className="transactionSuccess-container  mx-auto w-[300px] flex flex-col items-center justify-center gap-[30px]">
       <img src={success} alt="" />
@@ -16,7 +19,7 @@ function TransactionSuccess() {
       {/* <Button>Done</Button> */}
       <button
         className={`flex w-[100px] h-[30px] bg-[#7758d1] rounded-lg items-center justify-center hover:bg-opacity-75 active:bg-opacity-60 shadow-2xl`}
-        onClick={setSuccess}
+        onClick={() => {storeState.setTransferStatus(null)}}
       >
         Done
       </button>

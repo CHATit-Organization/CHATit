@@ -11,7 +11,7 @@ export const TokenProvider = ({ children }) => {
   const [selectedToken, setSelectedToken] = useState("CHT");
   const [amount, setAmount] = useState("0.00");
   const [remarks, setRemarks] = useState("");
-  const [isSuccess, setIsSuccess] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(null);
 
   const [showSendDetails, setShowSendDetails] = useState(false);
   const [showRequestDetails, setShowRequestDetails] = useState(false);

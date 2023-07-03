@@ -171,7 +171,7 @@ function Registration() {
 
   return (
     <div className="  w-[90vw] h-[95vh] bg-[#44444c] shadow-2xl rounded-lg text-white mx-auto ml-[-50px]">
-      <div className="regNav flex justify-between items-center mx-[50px] mb-[4vh] mt-[10px]">
+      <div className="regNav flex justify-between items-center pt-4 mx-[50px] mb-[4vh] mt-[10px]">
         <img src={ChatIt} alt="" className="w-[100px]" />
         <button onClick={() => {navigate("/")}} className="backBtn flex items-center gap-2 bg-[#7758d1] rounded-[20px] shadow-xl px-[20px] py-[5px] hover:bg-[#7758d1]/80">
           <img src={back} alt="" />

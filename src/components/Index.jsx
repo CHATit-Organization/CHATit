@@ -23,12 +23,14 @@ import ReportSuccessful from "./ReportSuccessful";
 import ReportSuccessfulAlt from "./ReportSuccessfulAlt";
 import PLaceBet from "./PLaceBet";
 import { useBet } from "../context/betContext";
+import { store } from "../store/zustand";
 
 function Index() {
   const media = useMedia();
   const token = useToken();
   const hunter = useHunter();
   const betz = useBet();
+  const storeState = store((state) => state);
 
   const { initiateHunt, hunt, proceedHunt, ProceedToHunt } = hunter;
   const { initiateBet, bet } = betz;
@@ -65,6 +67,7 @@ function Index() {
     isSuccess,
     setSuccess,
   } = token;
+
 
   return (
     <div>
@@ -178,7 +181,23 @@ function Index() {
         </div>
       )}
 
-      {isSuccess && (
+      {storeState.transferStatus !== null && (
+        <div>
+           <div
+            className="subcomponent-blur  absolute top-0 left-0 w-[96vw] h-full bg-black rounded-[10px] bg-opacity-[80%] z-10 cursor-pointer"
+            onClick={() => setSuccess(null)}
+          ></div>
+          <div className="subcomponent-blur" onClick={() => setSuccess(null)} ></div>
+          <div className="mediaShareDiv absolute z-50 top-[30%] left-[30%]">
+            {storeState.transferStatus === true && (<div className="subcomponent text-white absolute bg-[#222226] rounded-[20px] p-[30px] z-50 sendToken w-[400px] h-auto top-[-40px] left-[40px] shadow-xl">
+              <TransactionSuccess />
+            </div>)}  {storeState.transferStatus === false && (<div className="subcomponent text-white absolute bg-[#222226] rounded-[20px] p-[30px] z-50 sendToken w-[400px] h-auto top-[-40px] left-[40px] shadow-xl">
+              <TransactionFailed />
+            </div>)}
+          </div>
+        </div>
+      )}
+      {/* {!isSuccess && (
         <div>
            <div
             className="subcomponent-blur  absolute top-0 left-0 w-[96vw] h-full bg-black rounded-[10px] bg-opacity-[80%] z-10 cursor-pointer"
@@ -187,11 +206,11 @@ function Index() {
           <div className="subcomponent-blur" onClick={setSuccess} ></div>
           <div className="mediaShareDiv absolute z-50 top-[30%] left-[30%]">
             <div className="subcomponent text-white absolute bg-[#222226] rounded-[20px] p-[30px] z-50 sendToken w-[400px] h-auto top-[-40px] left-[40px] shadow-xl">
-              <TransactionSuccess />
+              <TransactionFailed />
             </div>
           </div>
         </div>
-      )}
+      )} */}
       {/* end of send token flow */}
 
       {receiveToken && (

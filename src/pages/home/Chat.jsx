@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import user from "../../assets/svg/chat/user.svg";
 import profile from "../../assets/svg/chat/profile.svg";
 import mutual from "../../assets/svg/chat/mutual.svg";
@@ -37,6 +37,11 @@ function Chat(props) {
   const { activeChat } = chat;
   const { isMedia, handleMedia } = media;
   const { handleToken } = token;
+  const messagesEndRef = useRef(null)
+
+  const scrollToBottom = () => {
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" })
+  }
 
   useEffect(() => {
     (async () => {
@@ -80,6 +85,9 @@ function Chat(props) {
     })();
   }, [storeState.messagesList]);
 
+  useEffect(() => {
+    scrollToBottom()
+  }, [storeState.messagesList]);
 
   const sendMessage = (e) => {
     setMessage(e.target.value);
@@ -194,6 +202,7 @@ function Chat(props) {
                         }
                       })()
                     )}
+                    <div ref={messagesEndRef} />
                   </div>
                 );
               })}
