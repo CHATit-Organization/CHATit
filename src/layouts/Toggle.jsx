@@ -2,20 +2,22 @@ import React from "react";
 import Back from "../assets/svg/toggle/btn1.svg";
 import Hide from "../assets/svg/toggle/btn2.svg";
 import Minimize from "../assets/svg/toggle/btn3.svg";
-import Logo from "../assets/svg/index/Chatit.svg";
+import ChatIt from "../assets/svg/index/Chatit.svg";
 import Rectangle from "../assets/svg/toggle/Rectangle.svg";
 import Avatar1 from "../assets/svg/toggle/action1.svg";
 import Avatar2 from "../assets/svg/toggle/action2.svg";
 import Avatar3 from "../assets/svg/toggle/action3.svg";
 import featuredCommunitiesData from "../data/featuredCommunitiesData";
 import { useChat } from "../context/chatContext";
+import { useNavigate } from "react-router-dom";
 
 function Toggle() {
+  const navigate = useNavigate();
   const chat = useChat();
   return (
     <div className=" flex flex-col w-[76px] items-center  h-[85vh] py-[13px]  ">
-      <div className="app_logo w-[70px] flex justify-center mb-[20px]">
-        <img src={Logo} alt="logo" />
+      <div onClick={() => {navigate("/")}} className="app_logo w-[70px] flex justify-center mb-[20px]">
+        <img src={ChatIt} alt="logo" />
       </div>
       <button
         className="action-button  flex justify-center gap-[8px] dm-button rounded-full  h-[50px] w-[50px] items-center  bg-[#0a0b0b]/30 font-bold text-sm p-1 action-logo"

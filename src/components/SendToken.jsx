@@ -1,11 +1,10 @@
 import React, { useState } from "react";
-import usdt from "../assets/svg/usdt.svg";
-import eth from "../assets/svg/eth.svg";
-import usdc from "../assets/svg/usdc.svg";
+import FTM from "../assets/svg/FTM.svg";
 // import btc from "../assets/svg/btc.svg";
-import CHATIT from "../assets/images/xdc-icon.png";
+import cht from "../assets/svg/cht.svg";
 import arrowsend from "../assets/svg/chat/arrowsend.svg";
 import { useToken } from "../context/tokenContext";
+import ChatIt from "../assets/svg/index/Chatit.svg";
 
 function SendToken() {
   const token = useToken();
@@ -27,7 +26,8 @@ function SendToken() {
         <div className="upperflex flex justify-between gap-[2px]  rounded-[10px] w-[300px] h-[50px] shadow-xl">
           {/* upperflex */}
           <div className="token-img flex items-center justify-center w-[91px] p-4 rounded-l-[10px]  bg-[#FFFFFF] bg-opacity-[15%]">
-            <img src={CHATIT} alt="" />
+            <img src={FTM} alt="" />
+            {/* <img src={cht} alt="" /> */}
             {/* <img src={usdt} alt="" />
             <img src={eth} alt="" />
             <img src={btc} alt="" /> */}
@@ -41,11 +41,11 @@ function SendToken() {
               onChange={(e) => handleSelectedToken(e)}
             >
               <option className="token-option" value="CHT">
-                <img src={CHATIT} alt="" />
+                <img src={cht} alt="" />
                 <h2>chatit Token</h2>
               </option>
               <option value="FTM">
-                <img src={CHATIT} alt="" />
+                <img src={FTM} alt="" />
                 <h2>FTM</h2>
               </option>
             </select>

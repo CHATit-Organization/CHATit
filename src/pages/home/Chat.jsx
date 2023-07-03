@@ -44,15 +44,14 @@ function Chat(props) {
     })();
   }, []);
 
-  useEffect(() => {
-    (async () => {
-      await getMessageFor(
-        storeState,
-        storeState.accounts[0],
-        activeChat.wallet
-      );
-    })();
-  }, [storeState.messagesList]);
+ const getMessages = async () => {
+  getMessageFor(
+    storeState,
+    storeState.accounts[0],
+    activeChat.wallet
+  );
+  return true;
+  };
 
   const getChatDate = (state) => {
     if (state.messagesList.length > 0) {
@@ -69,9 +68,18 @@ function Chat(props) {
 
   useEffect(() => {
     (async () => {
-      await getChatDate(storeState);
+      getMessages();
+      getChatDate(storeState);
+    })();
+  }, []);
+
+  useEffect(() => {
+    (async () => {
+      getMessages();
+      getChatDate(storeState);
     })();
   }, [storeState.messagesList]);
+
 
   const sendMessage = (e) => {
     setMessage(e.target.value);
@@ -81,7 +89,7 @@ function Chat(props) {
     if (e.key == "Enter") {
       const message = e.target.value;
       if (message !== "") {
-        await uploadMessageFor(
+        uploadMessageFor(
           storeState.accounts[0],
           storeState.userProfile.username,
           message,

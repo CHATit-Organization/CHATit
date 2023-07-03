@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { store } from "../store/zustand";
-import logo from "../assets/svg/index/logo.svg";
+import ChatIt from "../assets/svg/index/Chatit.svg";
 import back from "../assets/svg/auth/back.svg";
 
 const RenderAvatar = () => {
@@ -75,7 +75,7 @@ const RenderAvatar = () => {
                 <p>Back</p>
               </button>
             </Link>
-            <img src={logo} alt="" />
+            <img src={ChatIt} alt="" className="w-[100px]" />
           </div>
         </div>
         <h4 className="avatar-text font-bold  text-[black] bg-white px-4 py-2  w-[50vw] text-center rounded-lg">

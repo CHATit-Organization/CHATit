@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import logo from "../../assets/svg/index/logo.svg";
+import ChatIt from "../../assets/svg/index/Chatit.svg";
 import back from "../../assets/svg/auth/back.svg";
 import profile from "../../assets/svg/auth/profile.svg";
 import Button from "../../components/Button";
@@ -126,15 +126,15 @@ function Registration() {
       registerBtn &&
       registerBtn.style.backgroundColor !== "rgb(68, 68, 76)"
     ) {
-      await saveUserDetails(
-        userDetails.username,
-        userDetails.about,
-        userDetails.img,
-        storeState.accounts[0],
-        Date.now(),
-        0
-      );
        try {
+          saveUserDetails(
+            userDetails.username,
+            userDetails.about,
+            userDetails.img,
+            storeState.accounts[0],
+            Date.now(),
+            0
+          );
           saveUser(storeState.accounts[0]);
           await storeState.chatitContract.methods
             .register(
@@ -172,7 +172,7 @@ function Registration() {
   return (
     <div className="  w-[90vw] h-[95vh] bg-[#44444c] shadow-2xl rounded-lg text-white mx-auto ml-[-50px]">
       <div className="regNav flex justify-between items-center mx-[50px] mb-[4vh] mt-[10px]">
-        <img src={logo} alt="" />
+        <img src={ChatIt} alt="" className="w-[100px]" />
         <button onClick={() => {navigate("/")}} className="backBtn flex items-center gap-2 bg-[#7758d1] rounded-[20px] shadow-xl px-[20px] py-[5px] hover:bg-[#7758d1]/80">
           <img src={back} alt="" />
           <p>Back</p>
@@ -189,8 +189,8 @@ function Registration() {
         {isLoading ? (
           <div className="imageRegBlur bg-[black] bg-opacity-[95%] rounded-[15px] flex items-center justify-center w-[300px] h-[45vh] relative">
             <motion.img
-              src={logo}
-              alt="Fancord"
+              src={ChatIt}
+              alt="logo"
               animate={
                 isLoading && {
                   rotate: 360,
