@@ -26,7 +26,8 @@ module.exports = {
       provider: () =>
         new HDWalletProvider(PRIVATE_KEY, "https://rpc.ftm.tools/"),
       network_id: 250, // This network is yours, in the cloud.
-      // gas: 700000,
+      // gas: 3000000,
+      gasPrice: 100000000000,
       timeoutBlocks: 200,
     },
   },
